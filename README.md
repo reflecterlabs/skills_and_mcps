@@ -12,14 +12,13 @@ A curated collection of **Skills** (what we can do) and **MCPs** (how we connect
 
 ```
 skills/
-├── 🤖 agent-development    # Build AI agents (Lucid ecosystem)
-├── 🔍 research-data        # Discover APIs & data sources  
-└── 🚀 deployment           # Ship to production
+├── 🌙 daydreams/            # Lucid ecosystem skills
+└── 🧠 anthropic/            # Anthropic skill-creator
 
 mcps/
-├── ⛓️  starknet-dev        # Cairo, Dojo, OpenZeppelin
-├── 🗄️  data-backend        # Supabase & databases
-└── 📋 project-management   # Jira & tracking
+├── ⛓️  starknet-dev/        # Cairo, Dojo, OpenZeppelin
+├── 🗄️  data-backend/       # Supabase & databases
+└── 📋 project-management/   # Jira & tracking
 
 meta-skills/                # The conductors 🎼
 ```
@@ -28,11 +27,11 @@ meta-skills/                # The conductors 🎼
 
 ```bash
 # Find what you need
-ls skills/           # Browse capabilities
+ls skills/           # Browse by team
 ls mcps/             # Browse integrations
 
 # Read the manual
-cat skills/agent-development/lucid-agent-sdk/SKILL.md
+cat skills/daydreams/lucid-agent-sdk/SKILL.md
 ```
 
 ## 🎨 Contributing
