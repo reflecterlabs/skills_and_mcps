@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "dojo-sensei": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "--yes",
+        "github:dojoengine/sensei-mcp"
+      ]
+    }
+  }
+}
