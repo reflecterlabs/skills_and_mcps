@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "OpenZeppelinCairoContracts": {
+      "type": "http",
+      "url": "https://mcp.openzeppelin.com/contracts/cairo/mcp"
+    }
+  }
+}

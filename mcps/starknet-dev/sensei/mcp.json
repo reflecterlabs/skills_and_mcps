@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "sensei": {
+      "type": "command",
+      "command": "npx github:dojoengine/sensei-mcp",
+      "enabled": true
+    }
+  }
+}
