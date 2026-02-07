@@ -112,7 +112,7 @@ Create `.opencode/skills.json` and `.claude/skills.json`:
 ```json
 {
   "skills": {
-    "skill-creator": "~/Desktop/Skills-MCP/skills/anthropic/skill-creator"
+    "skill-creator": "~/Desktop/skills_and_mcps/skills/anthropic/skill-creator"
   }
 }
 ```
@@ -181,7 +181,7 @@ Create `.vscode/mcp.json` with relevant MCPs:
 ### Step 6: Add Copilot Instructions (If Needed)
 
 For **cairo** and **integration with cairo**, copy:
-`~/Desktop/Skills-MCP/meta-skills/create-project/references/copilot-instructions.md`
+`~/Desktop/skills_and_mcps/meta-skills/create-project/references/copilot-instructions.md`
 to:
 `~/Desktop/{project-name}/.github/copilot-instructions.md`
 
@@ -215,6 +215,6 @@ project/
 
 - **Always use forward slashes** in file paths, even on Windows
 - Projects are always created at `~/Desktop/{project-name}/`
-- The Skills-MCP repo detects its own meta-skills via `.opencode/skills.json` and `.claude/skills.json`
+- The skills_and_mcps repo detects its own meta-skills via `.opencode/skills.json` and `.claude/skills.json`
 - Copilot instructions are only for Cairo Coder MCP guidance
 - Each project references the skill-creator skill for future skill development
