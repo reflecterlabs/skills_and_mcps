@@ -107,7 +107,10 @@ project/
 
 ### Step 4: Configure Skills
 
-Create `.opencode/skills.json` and `.claude/skills.json`:
+Create both `.opencode/skills.json` and `.claude/skills.json` with identical content.
+The skills included depend on the project type and chosen framework.
+
+**Base skills (ALL project types):**
 
 ```json
 {
@@ -116,6 +119,33 @@ Create `.opencode/skills.json` and `.claude/skills.json`:
   }
 }
 ```
+
+**When the agent framework is Daydreams** (agents type with Daydreams, or integration type with Daydreams):
+
+```json
+{
+  "skills": {
+    "skill-creator": "~/Desktop/skills_and_mcps/skills/anthropic/skill-creator",
+    "api-research": "~/Desktop/skills_and_mcps/skills/daydreams/api-research",
+    "lucid-agent-sdk": "~/Desktop/skills_and_mcps/skills/daydreams/lucid-agent-sdk",
+    "lucid-client-api": "~/Desktop/skills_and_mcps/skills/daydreams/lucid-client-api",
+    "railway-deploy": "~/Desktop/skills_and_mcps/skills/daydreams/railway-deploy"
+  }
+}
+```
+
+**Skill mapping summary:**
+
+| Project Type | Skills |
+|---|---|
+| cairo | skill-creator |
+| solidity | skill-creator |
+| noir | skill-creator |
+| agents (Daydreams) | skill-creator, api-research, lucid-agent-sdk, lucid-client-api, railway-deploy |
+| agents (ElizaOS) | skill-creator |
+| agents (Starknet-Agentic) | skill-creator |
+| integration (Daydreams) | skill-creator, api-research, lucid-agent-sdk, lucid-client-api, railway-deploy |
+| integration (other) | skill-creator |
 
 Note: Use forward slashes in paths even on Windows.
 
@@ -127,7 +157,7 @@ Create `.vscode/mcp.json` with relevant MCPs:
 ```json
 {
   "servers": {
-    "cairo coder": {
+    "cairo-coder": {
       "command": "npx",
       "args": ["-y", "@kasarlabs/cairo-coder-mcp"],
       "env": {
@@ -142,14 +172,7 @@ Create `.vscode/mcp.json` with relevant MCPs:
 }
 ```
 
-**For Solidity**: Empty or minimal MCPs
-```json
-{
-  "servers": {}
-}
-```
-
-**For Noir**: Empty (MCPs to be added later)
+**For Solidity / Noir**: Empty servers
 ```json
 {
   "servers": {}
@@ -158,25 +181,7 @@ Create `.vscode/mcp.json` with relevant MCPs:
 
 **For Agents**: Depends on framework (configure as needed)
 
-**For Integration**:
-```json
-{
-  "servers": {
-    "cairo coder": {
-      "command": "npx",
-      "args": ["-y", "@kasarlabs/cairo-coder-mcp"],
-      "env": {
-        "CAIRO_CODER_API_KEY": "your-api-key-here"
-      }
-    },
-    "OpenZeppelinCairoContracts": {
-      "type": "http",
-      "url": "https://mcp.openzeppelin.com/contracts/cairo/mcp"
-    }
-  }
-}
-```
-(Only include Cairo MCPs if contracts are Cairo)
+**For Integration**: Include Cairo MCPs only if contracts language is Cairo. Otherwise empty servers.
 
 ### Step 6: Add Copilot Instructions (If Needed)
 
