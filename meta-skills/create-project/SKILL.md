@@ -220,6 +220,6 @@ project/
 
 - **Always use forward slashes** in file paths, even on Windows
 - Projects are always created at `~/Desktop/{project-name}/`
-- The skills_and_mcps repo detects its own meta-skills via `.opencode/skills.json` and `.claude/skills.json`
+- This skill is discovered by OpenCode from `.opencode/skills/create-project/SKILL.md` and by Claude Code from `.claude/skills/create-project/SKILL.md`
 - Copilot instructions are only for Cairo Coder MCP guidance
 - Each project references the skill-creator skill for future skill development

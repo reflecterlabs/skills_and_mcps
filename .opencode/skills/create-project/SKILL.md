@@ -232,19 +232,27 @@ This skill uses **relative paths** to reference the central `skills_and_mcps` re
 
 ### Required Setup
 
-1. **Clone Location (MANDATORY)**
+1. **WSL only (one-time):** Create a symlink so `~/Desktop` points to your Windows Desktop:
+   ```bash
+   ln -s "/mnt/c/Users/$(cmd.exe /c 'echo %USERNAME%' 2>/dev/null | tr -d '\r')/Desktop" ~/Desktop
+   ```
+   If `~/Desktop` already exists as an empty folder, remove it first: `rmdir ~/Desktop`
+
+   On macOS/Linux, `~/Desktop` already exists natively — skip this step.
+
+2. **Clone Location (MANDATORY)**
    All team members must clone the repository to:
    ```
    ~/Desktop/skills_and_mcps/
    ```
 
-2. **How to Clone:**
+3. **How to Clone:**
    ```bash
    cd ~/Desktop
    git clone https://github.com/reflecterlabs/skills_and_mcps.git
    ```
 
-3. **Usage:**
+4. **Usage:**
    ```bash
    cd ~/Desktop/skills_and_mcps
    opencode  # or claude
@@ -280,3 +288,4 @@ If skills are not found in new projects:
 1. Verify `skills_and_mcps` is at `~/Desktop/skills_and_mcps/`
 2. Verify the new project is at `~/Desktop/{project-name}/`
 3. Check that both are in the same parent directory (`~/Desktop/`)
+4. On WSL: verify `~/Desktop` is a symlink (`ls -la ~/Desktop`) — if it's a regular directory, redo step 1
